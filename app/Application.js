@@ -1,7 +1,6 @@
 Ext.Loader.setConfig({
     enabled: true,
-    paths: {
-    }
+    paths: {}
 });
 
 
@@ -11,17 +10,24 @@ Ext.define('Log.Application', {
     extend: 'Ext.app.Application',
 
     requires: ['Ext.window.Window',
-    'Ext.form.Label', 
-    'Ext.form.Panel'
+        'Ext.form.Label',
+        'Ext.form.Panel'
     ],
 
     views: [],
 
     controllers: [
-        'Login', 'Main', 'Log.controller.usuarios.Users'
+        'Login', 'Main', 'Log.controller.usuarios.Users', 'Log.controller.graficos.GraficoHost'
     ],
 
-    stores: ['Log.store.Usuarios', 'Log.store.Logs', 'Log.store.graficos.FromHosts', 'Log.store.graficos.Minutos'],
+    stores: ['Log.store.Usuarios',
+        'Log.store.logs.Logs',
+        'Log.store.graficos.FromHosts',
+        'Log.store.graficos.Dia',
+        'Log.store.graficos.Mes',
+        'Log.store.graficos.Ano',
+        'Log.store.logs.LogsPortlet'
+    ],
 
 
     splashscreen: {},

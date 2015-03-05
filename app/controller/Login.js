@@ -31,7 +31,7 @@ Ext.define('Log.controller.Login', {
             "login form textfield[name=password]": {
                 keypress: this.onTextfielKeyPress
             },
-            "loggrid button#arquivo > menu > menuitem#logout": {
+            "barra button#arquivo > menu > menuitem#logout": {
                 click: this.onButtonClickLogout
             }
         });

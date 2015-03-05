@@ -6,7 +6,7 @@ Ext.define('Log.view.portlet.GridPortlet', {
 
     xtype: 'row-expander-grid',
 
-    store: 'Log.store.Logs',
+    store: 'Log.store.logs.LogsPortlet',
 
     columns: [{
         id: 'data',

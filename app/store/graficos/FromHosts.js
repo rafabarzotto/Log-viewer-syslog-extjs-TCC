@@ -16,6 +16,6 @@ Ext.define('Log.store.graficos.FromHosts', {
 		}
 	},
 
-	autoLoad: true
+	autoLoad: false
 
 });

@@ -1,13 +1,13 @@
-Ext.define('Log.view.portlet.ChartPortlet', {
+Ext.define('Log.view.graficos.LogsMesBar', {
     extend: 'Ext.chart.Chart',
-    alias: 'widget.chartportlet',
+    alias: 'widget.logsmesbar',
 
     requires: ['Ext.chart.series.Column', 'Ext.chart.axis.Category', 'Ext.chart.axis.Numeric'],
 
     style: 'background:#fff',
     animate: true,
     shadow: true,
-    store: 'Log.store.graficos.Dia',
+    store: 'Log.store.graficos.Mes',
     axes: [{
         type: 'Numeric',
         position: 'left',
@@ -18,8 +18,8 @@ Ext.define('Log.view.portlet.ChartPortlet', {
     }, {
         type: 'Category',
         position: 'bottom',
-        fields: ['Dias'],
-        title: 'Dia',
+        fields: ['Mes'],
+        title: 'Mês',
         label: {
             font: '9px Arial'
         }
@@ -33,7 +33,7 @@ Ext.define('Log.view.portlet.ChartPortlet', {
             width: 100,
             height: 28,
             renderer: function(storeItem, item) {
-                this.setTitle(storeItem.get('Dias') + ': ' + storeItem.get('Total'));
+                this.setTitle(storeItem.get('Mes') + ': ' + storeItem.get('Total'));
             }
         },
         label: {
@@ -43,7 +43,7 @@ Ext.define('Log.view.portlet.ChartPortlet', {
             orientation: 'vertical',
             color: '#333'
         },
-        xField: 'Dias',
+        xField: 'Mes',
         yField: 'Total'
     }],
 

@@ -1,13 +1,14 @@
-Ext.define('Log.view.relatorios.Logs', {
+Ext.define('Log.view.relatorios.Graficos', {
 	extend: 'Ext.window.Window',
 
-	alias: 'widget.logs',
+	alias: 'widget.graficos',
 
-	title: 'Relatório Detalhado',
+	title: 'Graficos',
 
 	requires: [
 	//'OC.view.grids.GridLogs', 
 	//'OC.ux.grid.Printer'
+	'Log.view.tabs.TabGraficos'
 	],
 
 	iconCls: 'icon-grid',
@@ -17,17 +18,17 @@ Ext.define('Log.view.relatorios.Logs', {
 	height: 600,
 	width: 700,
 	maximized: true,
-	autoScroll: true,
+	autoScroll: false,
 
 	closeAction: 'destroy',
 
-	layout: {
+	/*layout: {
 		type: 'vbox',
 		align: 'center'
-	},
+	},*/
 
 	items: [{
-		//xtype: 'gridordensemitidas'
+		xtype: 'tabgraficos',
 	}]
 
 

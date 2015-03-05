@@ -4,7 +4,7 @@ Ext.define('Log.view.grids.GridLogs', {
 
     requires: ['Ext.form.field.Date', 'Ext.toolbar.Spacer'],
 
-    store: 'Log.store.Logs',
+    store: 'Log.store.logs.Logs',
 
     columns: [{
             text: 'ID',
@@ -145,14 +145,15 @@ Ext.define('Log.view.grids.GridLogs', {
         }
     ],
 
-    height: 590,
-    width: 1260,
+    //height: 560, //560
+    autoHeight: true,
+    width: '99%', //1235
     maximized: true,
     renderTo: Ext.getBody(),
 
     dockedItems: [{
         xtype: 'pagingtoolbar',
-        store: 'Log.store.Logs', // same store GridPanel is using --- EXEMPLO da documentação
+        store: 'Log.store.logs.Logs', // same store GridPanel is using --- EXEMPLO da documentação
         dock: 'bottom',
         displayInfo: true
     }]

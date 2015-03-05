@@ -1,9 +1,9 @@
-Ext.define('Log.store.Logs', {
+Ext.define('Log.store.logs.Logs', {
     extend: 'Ext.data.Store',
 
     model: 'Log.model.Log',
 
-    pageSize: 40, // PAGINAGINA MAXIMA
+    pageSize: 20, // PAGINAGINA MAXIMA
 
     proxy: {
         type: 'ajax',

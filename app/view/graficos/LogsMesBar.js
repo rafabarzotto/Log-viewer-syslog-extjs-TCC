@@ -4,8 +4,11 @@ Ext.define('Log.view.graficos.LogsMesBar', {
 
     requires: ['Ext.chart.series.Column', 'Ext.chart.axis.Category', 'Ext.chart.axis.Numeric'],
 
+    title: 'Eventos por mês',
+
     style: 'background:#fff',
     animate: true,
+    maximized: true,
     shadow: true,
     store: 'Log.store.graficos.Mes',
     axes: [{
@@ -45,10 +48,6 @@ Ext.define('Log.view.graficos.LogsMesBar', {
         },
         xField: 'Mes',
         yField: 'Total'
-    }],
-
-    height: 300,
-    maximized: true,
-    renderTo: Ext.getBody()
+    }]
 
 });

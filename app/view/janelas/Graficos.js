@@ -15,8 +15,6 @@ Ext.define('Log.view.janelas.Graficos', {
 
 	autoShow: true,
 	modal: true,
-	height: 600,
-	width: 700,
 	maximized: true,
 	autoScroll: false,
 

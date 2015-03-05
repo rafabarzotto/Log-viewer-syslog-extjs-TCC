@@ -4,8 +4,12 @@ Ext.define('Log.view.graficos.LogsAnoBar', {
 
     requires: ['Ext.chart.series.Column', 'Ext.chart.axis.Category', 'Ext.chart.axis.Numeric'],
 
+    title: 'Eventos por ano',
+
     style: 'background:#fff',
     animate: true,
+    maximized: true,
+    insetPadding: 60,
     shadow: true,
     store: 'Log.store.graficos.Ano',
     axes: [{
@@ -45,11 +49,6 @@ Ext.define('Log.view.graficos.LogsAnoBar', {
         },
         xField: 'Ano',
         yField: 'Total'
-    }],
-
-    height: 300,
-    width: 300,
-    maximized: true,
-    renderTo: Ext.getBody()
+    }]
 
 });

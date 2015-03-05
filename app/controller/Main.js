@@ -38,7 +38,7 @@ Ext.define('Log.controller.Main', {
 	},
 
 	openGerarOrdem: function(btn, eOpts) {
-		Ext.create('Log.view.relatorios.Relatorios');
+		Ext.create('Log.view.janelas.Relatorios');
 	},
 
 	openUsersGrid: function(btn, eOpts) {
@@ -46,7 +46,7 @@ Ext.define('Log.controller.Main', {
 	},
 
 	openOrdemGrid: function(btn, eOpts) {
-		Ext.create('Log.view.relatorios.Graficos');
+		Ext.create('Log.view.janelas.Graficos');
 	},
 
 	openCancelarOrdem: function(btn, eOpts) {

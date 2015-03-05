@@ -17,7 +17,10 @@ Ext.define('Log.Application', {
     views: [],
 
     controllers: [
-        'Login', 'Main', 'Log.controller.usuarios.Users', 'Log.controller.graficos.GraficoHost'
+        'Login', 'Main',
+        'Log.controller.usuarios.Users',
+        'Log.controller.graficos.GraficoHost',
+        'Log.controller.graficos.GraficoPeriodo'
     ],
 
     stores: ['Log.store.Usuarios',

@@ -1,7 +1,7 @@
-Ext.define('Log.view.relatorios.Relatorios', {
+Ext.define('Log.view.janelas.Relatorios', {
 	extend: 'Ext.window.Window',
 
-	alias: 'widget.relatorios',
+	alias: 'widget.janelarelatorios',
 
 	title: 'Relatório Detalhado',
 

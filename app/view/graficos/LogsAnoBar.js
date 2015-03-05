@@ -48,6 +48,7 @@ Ext.define('Log.view.graficos.LogsAnoBar', {
     }],
 
     height: 300,
+    width: 300,
     maximized: true,
     renderTo: Ext.getBody()
 

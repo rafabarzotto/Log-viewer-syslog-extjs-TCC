@@ -1,7 +1,7 @@
-Ext.define('Log.view.relatorios.Graficos', {
+Ext.define('Log.view.janelas.Graficos', {
 	extend: 'Ext.window.Window',
 
-	alias: 'widget.graficos',
+	alias: 'widget.janelagraficos',
 
 	title: 'Graficos',
 

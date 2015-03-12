@@ -11,9 +11,9 @@ Ext.define('Log.view.app.Portlet', {
     frame: true,
     closable: true,
     collapsible: true,
-    animCollapse: true,
+    animCollapse: false,
     draggable: {
-        moveOnDrag: false    
+        moveOnDrag: false
     },
     cls: 'x-portlet',
 
@@ -24,7 +24,7 @@ Ext.define('Log.view.app.Portlet', {
             this.closing = true;
             this.el.animate({
                 opacity: 0,
-                callback: function(){
+                callback: function() {
                     this.fireEvent('close', this);
                     this[this.closeAction]();
                 },

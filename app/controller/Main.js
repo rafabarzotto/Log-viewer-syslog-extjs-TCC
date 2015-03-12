@@ -2,9 +2,6 @@ Ext.define('Log.controller.Main', {
 	extend: 'Ext.app.Controller',
 
 
-	views: [],
-
-
 	// Funcao Renderizar GRID
 	init: function(application) {
 		this.control({
@@ -50,7 +47,7 @@ Ext.define('Log.controller.Main', {
 	},
 
 	openCancelarOrdem: function(btn, eOpts) {
-		Ext.create('Log.view.consulta.CancelarOrdem');
+
 	}
 
 

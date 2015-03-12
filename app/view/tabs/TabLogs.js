@@ -5,7 +5,7 @@ Ext.define('Log.view.tabs.TabLogs', {
 
     requires: ['Log.view.grids.GridLogs'],
 
-    xtype: 'basic-tabs',
+    //xtype: 'basic-tabs',
 
     height: 720, //720
     width: 1260, //1260

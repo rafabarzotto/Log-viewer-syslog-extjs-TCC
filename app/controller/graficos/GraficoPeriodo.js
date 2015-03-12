@@ -9,10 +9,6 @@ Ext.define('Log.controller.graficos.GraficoPeriodo', {
       //  'graficos.QtdHostsColumn',
     ],
 
-  //  stores: [
-  //      'graficos.FromHosts'
-  //  ],
-
     init: function(application) {
         this.control({
             "graficos tabgraficos graficoperiodo tabpanel#tabsperiodo tabpanel#tabdia": { // Alias GRID!

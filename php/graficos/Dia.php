@@ -5,8 +5,8 @@ require("../conectar.php");
 session_start();
 
 //select the information
-$sql = "SELECT count(DeviceReportedTime) AS Total, DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d') AS Dias 
-FROM SystemEvents GROUP BY Dias DESC LIMIT 0, 6";
+$sql = "SELECT count(DeviceReportedTime) AS Total, DATE_FORMAT(DeviceReportedTime,'%d-%m-%Y') AS Dia 
+FROM SystemEvents GROUP BY Dia ORDER BY DeviceReportedTime DESC LIMIT 0, 6";
 
 $result = array();
 //$film_categories = array();

@@ -1,14 +1,14 @@
-Ext.define('Log.store.graficos.Dia', {
+Ext.define('Log.store.graficos.Hora', {
 	extend: 'Ext.data.Store',
 
-	fields: ['Total', 'Dia'],
+	fields: ['Total', 'Hora'],
 
 	//pageSize: 5, // PAGINAGINA MAXIMA
 
 	proxy: {
 		type: 'ajax',
 
-		url: 'php/graficos/Dia.php',
+		url: 'php/graficos/Hora.php',
 
 		reader: {
 			type: 'json',

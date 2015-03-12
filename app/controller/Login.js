@@ -12,7 +12,6 @@ Ext.define('Log.controller.Login', {
 
     views: [
         'Login',
-        //'Log.view.principal.LogGrid'
         // 'authentication.CapsLockTooltip'
     ],
 
@@ -125,7 +124,6 @@ Ext.define('Log.controller.Login', {
     },
 
     onButtonClickLogout: function(button, e, options) {
-        console.log('teste');
 
         Ext.Ajax.request({
             url: 'php/login/logout.php',

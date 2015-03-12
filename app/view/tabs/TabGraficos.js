@@ -3,7 +3,7 @@ Ext.define('Log.view.tabs.TabGraficos', {
 
     alias: 'widget.tabgraficos',
 
-    requires: ['Log.view.tabs.graficos.GraficoHost',
+    views: ['Log.view.tabs.graficos.GraficoHost',
     'Log.view.tabs.graficos.GraficoPeriodo',
     ],
 

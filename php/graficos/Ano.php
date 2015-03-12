@@ -6,7 +6,7 @@ session_start();
 
 //select the information
 $sql = "SELECT count(DeviceReportedTime) AS Total, DATE_FORMAT(DeviceReportedTime,'%Y') AS Ano 
-FROM SystemEvents GROUP BY Ano DESC LIMIT 0, 6";
+FROM SystemEvents GROUP BY Ano ORDER BY DeviceReportedTime DESC LIMIT 0, 6";
 
 $result = array();
 //$film_categories = array();

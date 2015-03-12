@@ -18,7 +18,6 @@ $conexao = mysql_connect($servidor,$userBanco,$senhaBanco) or die (mysql_error()
 //seleciona a base de dados daquela conexão, caso contrário mostra o erro ocorrido
 $banco = mysql_select_db($db, $conexao) or die(mysql_error());
 
-
 //outros
 $mysqli = new mysqli($servidor, $userBanco, $senhaBanco, $db);
 

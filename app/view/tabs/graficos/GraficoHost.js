@@ -1,10 +1,12 @@
 Ext.define('Log.view.tabs.graficos.GraficoHost', {
-    extend: 'Ext.panel.Panel',
+    extend: 'Ext.tab.Panel',
     alias: 'widget.graficohost',
 
-    requires: ['Log.view.graficos.HostsPie',
+    views: ['Log.view.graficos.HostsPie',
         'Log.view.graficos.HostsBar'
     ],
+
+    requires: ['Log.view.toolbar.BarraGraficos'],
 
     layout: 'card',
     autoShow: true,
@@ -12,8 +14,6 @@ Ext.define('Log.view.tabs.graficos.GraficoHost', {
     height: 600,
     maximized: true,
 
-    items: [{
-        xtype: 'tabpanel',
         items: [{
             xtype: 'hostspie'
         }, {
@@ -25,8 +25,6 @@ Ext.define('Log.view.tabs.graficos.GraficoHost', {
         dockedItems: [{
             xtype: 'barragraficos'
         }]
-
-    }]
 
 
 });

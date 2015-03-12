@@ -1,13 +1,16 @@
-Ext.define('Log.view.portlet.ChartPortlet', {
+Ext.define('Log.view.graficos.LogsDiaBar', {
     extend: 'Ext.chart.Chart',
-    alias: 'widget.chartportlet',
+    alias: 'widget.logsdiabar',
 
     requires: ['Ext.chart.series.Column', 'Ext.chart.axis.Category', 'Ext.chart.axis.Numeric'],
 
+    title: 'Eventos por dia',
     style: 'background:#fff',
     animate: true,
+    maximized: true,
+    insetPadding: 60,
     shadow: true,
-    store: 'Log.store.graficos.Hora',
+    store: 'Log.store.graficos.Dia',
     axes: [{
         type: 'Numeric',
         position: 'left',
@@ -18,8 +21,8 @@ Ext.define('Log.view.portlet.ChartPortlet', {
     }, {
         type: 'Category',
         position: 'bottom',
-        fields: ['Hora'],
-        title: 'Hora',
+        fields: ['Dia'],
+        title: 'Dia',
         label: {
             font: '9px Arial'
         }
@@ -33,7 +36,7 @@ Ext.define('Log.view.portlet.ChartPortlet', {
             width: 100,
             height: 28,
             renderer: function(storeItem, item) {
-                this.setTitle(storeItem.get('Hora') + ': ' + storeItem.get('Total'));
+                this.setTitle(storeItem.get('Dia') + ': ' + storeItem.get('Total'));
             }
         },
         label: {
@@ -43,12 +46,8 @@ Ext.define('Log.view.portlet.ChartPortlet', {
             orientation: 'vertical',
             color: '#333'
         },
-        xField: 'Hora',
+        xField: 'Dia',
         yField: 'Total'
-    }],
-
-    height: 300,
-    maximized: true,
-    renderTo: Ext.getBody()
+    }]
 
 });

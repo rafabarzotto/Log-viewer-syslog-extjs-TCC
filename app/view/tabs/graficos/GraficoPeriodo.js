@@ -3,10 +3,9 @@ Ext.define('Log.view.tabs.graficos.GraficoPeriodo', {
     alias: 'widget.graficoperiodo',
 
     requires: [
-        'Log.view.portlet.ChartPortlet',
+        'Log.view.graficos.LogsDiaBar',
         'Log.view.graficos.LogsMesBar',
         'Log.view.graficos.LogsAnoBar',
-        'Log.view.toolbar.BarraGraficos'
     ],
 
     layout: 'card',
@@ -16,15 +15,11 @@ Ext.define('Log.view.tabs.graficos.GraficoPeriodo', {
     maximized: true,
 
     items: [{
-        xtype: 'chartportlet'
+        xtype: 'logsdiabar'
     }, {
         xtype: 'logsmesbar'
     }, {
         xtype: 'logsanobar'
-    }],
-
-    dockedItems: [{
-        xtype: 'barragraficos'
     }]
 
 

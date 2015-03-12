@@ -15,26 +15,26 @@ Ext.define('Log.controller.graficos.GraficoHost', {
 
     init: function(application) {
         this.control({
-            "janelagraficos tabgraficos graficohost tabpanel": { // Alias GRID!
+            "janelagraficos tabgraficos graficohost": { // Alias GRID!
                 render: this.onWindowRender
             },
-            "janelagraficos tabgraficos graficohost tabpanel menu#changeType menuitem": {
+            "janelagraficos tabgraficos graficohost menu#changeType menuitem": {
                 click: this.onChangeChart
             },
-            "janelagraficos tabgraficos graficohost tabpanel menu#download menuitem": {
+            "janelagraficos tabgraficos graficohost menu#download menuitem": {
                 click: this.onChartDownload
             }
         });
     },
 
     onWindowRender: function(panel, eOpts) {
-        var panel = Ext.ComponentQuery.query('janelagraficos tabgraficos graficohost tabpanel > hostspie')[0];
+        var panel = Ext.ComponentQuery.query('janelagraficos tabgraficos graficohost > hostspie')[0];
         panel.getStore().load();
     },
 
     onChangeChart: function(item, e, options) {
         //var panel = item.up('graficos');
-        var panel = Ext.ComponentQuery.query('janelagraficos tabgraficos graficohost tabpanel')[0];
+        var panel = Ext.ComponentQuery.query('janelagraficos tabgraficos graficohost')[0];
 
         if (item.itemId == 'pie'){
             panel.getLayout().setActiveItem(0);
@@ -48,7 +48,7 @@ Ext.define('Log.controller.graficos.GraficoHost', {
 
     onChartDownload: function(item, e, options) {
         //var chart = item.up('graficos').getLayout().getActiveItem();
-        var chart = Ext.ComponentQuery.query('janelagraficos tabgraficos graficohost tabpanel')[0].getLayout().getActiveItem();
+        var chart = Ext.ComponentQuery.query('janelagraficos tabgraficos graficohost')[0].getLayout().getActiveItem();
 
         if (item.itemId == 'png'){
             Ext.MessageBox.confirm('Confirmar Download', 'Gostaria de fazer o download do gráfico como imagem?', function(choice){

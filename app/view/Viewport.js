@@ -1,6 +1,6 @@
 Ext.define('Log.view.Viewport', {
-
     extend: 'Ext.container.Viewport',
+    alias: 'widget.myviewport',
 
     requires: ['Ext.tab.Panel',
         'Ext.layout.container.Column',

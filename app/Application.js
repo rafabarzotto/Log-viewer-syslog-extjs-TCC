@@ -26,6 +26,7 @@ Ext.define('Log.Application', {
     stores: ['Log.store.Usuarios',
         'Log.store.logs.Logs',
         'Log.store.graficos.FromHosts',
+        'Log.store.graficos.Hora',
         'Log.store.graficos.Dia',
         'Log.store.graficos.Mes',
         'Log.store.graficos.Ano',

@@ -10,11 +10,11 @@ Ext.define('Log.controller.Main', {
 			},
 
 			"barra button#arquivo > menu > menuitem#arqA": {
-				click: this.openGerarOrdem
+				//click: this.openGerarOrdem
 			},
 
 			"barra button#arquivo > menu > menuitem#arqB": {
-				click: this.openOrdemGrid
+				//click: this.openOrdemGrid
 			},
 
 			"barra button#opcoes > menu > menuitem#opA": {
@@ -22,8 +22,16 @@ Ext.define('Log.controller.Main', {
 			},
 
 			"barra button#opcoes > menu > menuitem#opB": {
-				click: this.openCancelarOrdem
+				//click: this.openCancelarOrdem
 			},
+
+			"barra button#relatorios > menu > menuitem#relA": {
+				click: this.openJanelaRelatorios
+			},
+
+			"barra button#relatorios > menu > menuitem#relB": {
+				click: this.openJanelaGraficos
+			}
 
 
 		})
@@ -34,20 +42,21 @@ Ext.define('Log.controller.Main', {
 		gridportlet.getStore().load();
 	},
 
-	openGerarOrdem: function(btn, eOpts) {
+	//Arquivo
+
+	//Relatorios
+	openJanelaRelatorios: function(btn, eOpts) {
 		Ext.create('Log.view.janelas.Relatorios');
 	},
 
-	openUsersGrid: function(btn, eOpts) {
-		Ext.create('Log.view.usuarios.UsersGrid');
-	},
 
-	openOrdemGrid: function(btn, eOpts) {
+	openJanelaGraficos: function(btn, eOpts) {
 		Ext.create('Log.view.janelas.Graficos');
 	},
 
-	openCancelarOrdem: function(btn, eOpts) {
-
+	//Opcoes
+	openUsersGrid: function(btn, eOpts) {
+		Ext.create('Log.view.usuarios.UsersGrid');
 	}
 
 

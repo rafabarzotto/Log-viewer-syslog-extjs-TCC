@@ -133,7 +133,7 @@ Ext.define('Log.controller.Login', {
 
                 if (result.success) {
 
-                    button.up('mainviewport').destroy();
+                    button.up('myviewport').destroy();
                     window.location.reload();
                 } else {
 

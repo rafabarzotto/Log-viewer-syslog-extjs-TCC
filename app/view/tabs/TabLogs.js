@@ -3,27 +3,28 @@ Ext.define('Log.view.tabs.TabLogs', {
 
     alias: 'widget.tablogs',
 
-    requires: ['Log.view.grids.GridLogs'],
+    requires: ['Log.view.grids.GridLogs',
+        'Log.view.tabs.logs.Consulta'
+    ],
 
-    //xtype: 'basic-tabs',
-
-    height: 720, //720
-    width: 1260, //1260
+   // height: '100%', //720
+   // width: '100%', //1260
     maximized: true,
     defaults: {
         bodyPadding: 10,
         autoScroll: true
     },
     items: [{
-        title: 'Active Tab',
+        title: 'Todos os Eventos',
         items: [{
-                xtype: 'gridlogs',
-                achor: '100%'
-            }]
-            //html: KitchenSink.DummyText.longText
+            xtype: 'gridlogs'
+        }]
     }, {
-        title: 'Inactive Tab',
-        // html: KitchenSink.DummyText.extraLongText
+        title: 'Relatório Personalizado',
+        items: [{
+                xtype: 'consultapers'
+            }]
+            // html: KitchenSink.DummyText.extraLongText
     }, {
         title: 'Disabled Tab',
         disabled: true

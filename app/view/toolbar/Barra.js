@@ -42,7 +42,7 @@ Ext.define('Log.view.toolbar.Barra', {
             iconCls: 'icon-report',
             id: 'relatorios',
             menu: [{
-                text: 'Relatório Por Data',
+                text: 'Relatórios Completos',
                 id: 'relA',
                 iconCls: 'icon-date'
             }, '-', {

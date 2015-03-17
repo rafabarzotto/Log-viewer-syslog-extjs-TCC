@@ -5,7 +5,10 @@
 	$start = $_REQUEST['start'];
 	$limit = $_REQUEST['limit'];
 
-	$queryString = "SELECT ID, DeviceReportedTime, SysLogTag, Facility, Priority, FromHost, Message FROM SystemEvents order by ID desc LIMIT $start,  $limit";
+
+	$queryString = "SELECT ID, DeviceReportedTime, SysLogTag, Facility, Priority, FromHost, Message 
+		FROM SystemEvents order by ID desc LIMIT $start,  $limit";
+
 
 	//consulta sql
 	$query = mysql_query($queryString) or die(mysql_error());

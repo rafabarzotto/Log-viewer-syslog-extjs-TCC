@@ -2,6 +2,11 @@ Ext.define('Log.view.form.FormConsulta', {
     extend: 'Ext.form.Panel',
     alias: 'widget.formconsulta',
 
+    requires: ['Ext.example.*',
+        'Ext.window.MessageBox',
+        'Log.ux.notification.Notification'
+    ],
+
     autoHeight: true,
     width: '99%', //600
     bodyPadding: 5,
@@ -62,7 +67,8 @@ Ext.define('Log.view.form.FormConsulta', {
             combineErrors: true,
             msgTarget: 'under',
             items: [{
-                xtype: 'textfield'
+                xtype: 'textfield',
+                name: 'tag'
             }]
         }, {
             xtype: 'fieldcontainer',
@@ -91,16 +97,22 @@ Ext.define('Log.view.form.FormConsulta', {
                         value: '2'
                     }, {
                         name: '3',
+                        value: '3'
+                    }, {
+                        name: '4',
                         value: '4'
+                    }, {
+                        name: '6',
+                        value: '6'
                     }]
                 })
-            },{
+            }, {
                 xtype: 'textfield',
                 fieldLabel: 'Host',
+                name: 'host',
                 labelWidth: 35,
                 margin: '0 0 0 60',
-            }
-            ]
+            }]
         }, {
             xtype: 'textfield',
             flex: 1,
@@ -108,6 +120,30 @@ Ext.define('Log.view.form.FormConsulta', {
             fieldLabel: 'Evento',
             allowBlank: false
         }]
+    }],
+
+    buttons: [{
+        text: 'Buscar',
+        itemId: 'buscar',
+    }, {
+        text: 'Limpar',
+        itemId: 'limpar',
+        handler: function(btn) {
+            Ext.create('widget.uxNotification', {
+                corner: 'tc',
+                manager: 'instructions',
+                //iconCls: 'notification-icon-information',
+                title: 'Test',
+                html: 'HAHAHHAHAHAHAHA DEU CERTO',
+                autoDestroyDelay: 4000,
+                slideInDelay: 500,
+                slideDownDelay: 500,
+                slideInAnimation: 'bounceOut',
+                slideDownAnimation: 'easeIn'
+            }).show();
+            this.up('form').getForm().reset();
+        }
+
     }]
 
 });

@@ -20,11 +20,13 @@ Ext.define('Log.Application', {
         'Login', 'Main',
         'Log.controller.usuarios.Users',
         'Log.controller.graficos.GraficoHost',
-        'Log.controller.graficos.GraficoPeriodo'
+        'Log.controller.graficos.GraficoPeriodo',
+        'Log.controller.Relatorios'
     ],
 
     stores: ['Log.store.Usuarios',
         'Log.store.logs.Logs',
+        'Log.store.logs.LogsCustom',
         'Log.store.graficos.FromHosts',
         'Log.store.graficos.Hora',
         'Log.store.graficos.Dia',

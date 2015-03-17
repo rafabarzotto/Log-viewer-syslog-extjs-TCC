@@ -35,7 +35,7 @@ Ext.define('Log.controller.Login', {
             }
         });
 
-        
+
 
     },
 
@@ -47,7 +47,7 @@ Ext.define('Log.controller.Login', {
         var values = formPanel.getValues();
         var user = values.loginUsername;
         var pass = values.loginPassword;
-  
+
 
         if (formPanel.getForm().isValid()) {
 
@@ -78,6 +78,8 @@ Ext.define('Log.controller.Login', {
                     } else {
                         //Log.util.Util.showErrorMsg(conn.responseText);
                         Log.util.Util.showErrorMsg('Nome de usuário ou senha incorreto!');
+          
+
 
                     }
                 },

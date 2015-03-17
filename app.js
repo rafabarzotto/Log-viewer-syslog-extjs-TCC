@@ -3,7 +3,6 @@
     needed for your application, but these edits will have to be merged by
     Sencha Cmd when upgrading.
 */
-
 Ext.application({
     name: 'Log',
 

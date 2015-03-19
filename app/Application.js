@@ -32,7 +32,9 @@ Ext.define('Log.Application', {
         'Log.store.graficos.Dia',
         'Log.store.graficos.Mes',
         'Log.store.graficos.Ano',
-        'Log.store.logs.LogsPortlet'
+        'Log.store.logs.LogsPortlet',
+        'Log.store.combobox.ComboFromHosts',
+        'Log.store.combobox.ComboTag'
     ],
 
 

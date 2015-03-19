@@ -2,10 +2,7 @@ Ext.define('Log.view.form.FormConsulta', {
     extend: 'Ext.form.Panel',
     alias: 'widget.formconsulta',
 
-    requires: ['Ext.example.*',
-        'Ext.window.MessageBox',
-        'Log.ux.notification.Notification'
-    ],
+    requires: ['Log.ux.notification.Notification'],
 
     autoHeight: true,
     width: '99%', //600
@@ -23,26 +20,30 @@ Ext.define('Log.view.form.FormConsulta', {
         items: [{
             xtype: 'datefield',
             name: 'startDate',
+            submitFormat: 'Y-m-d',
             margin: '0 5 0 0',
-            allowBlank: false
+            value: '',
+            maxValue: new Date()
         }, {
             xtype: 'timefield',
             name: 'startTime',
             margin: '0 100 0 0',
-            allowBlank: false
+            format: 'H:i'
         }, {
             xtype: 'datefield',
             name: 'endDate',
             fieldLabel: 'Até a data',
+            submitFormat: 'Y-m-d',
             margin: '0 5 0 0',
             labelWidth: 70,
-            allowBlank: false
+            value: '',
+            maxValue: new Date()
         }, {
             xtype: 'timefield',
             name: 'endTime',
             margin: '0 5 0 0',
             labelWidth: 30,
-            allowBlank: false
+            format: 'H:i'
         }]
     }, {
         xtype: 'fieldset',
@@ -67,58 +68,35 @@ Ext.define('Log.view.form.FormConsulta', {
             combineErrors: true,
             msgTarget: 'under',
             items: [{
-                xtype: 'textfield',
-                name: 'tag'
-            }]
-        }, {
-            xtype: 'fieldcontainer',
-            combineErrors: true,
-            msgTarget: 'side',
-            fieldLabel: 'Prioriedade',
-            layout: 'hbox',
-            items: [{
-                width: 65,
-                xtype: 'combo',
+                xtype: 'combobox',
+                emptyText: 'Todas as Tags',
+                store: 'Log.store.combobox.ComboTag',
                 queryMode: 'local',
-                value: 'Todos',
-                triggerAction: 'all',
-                forceSelection: true,
+                id: 'tagcombo',
+                displayField: 'SysLogTag',
+                valueField: 'SysLogTag',
                 editable: false,
-                name: 'prioriedade',
-                displayField: 'name',
-                valueField: 'value',
-                store: Ext.create('Ext.data.Store', {
-                    fields: ['name', 'value'],
-                    data: [{
-                        name: '1',
-                        value: '1'
-                    }, {
-                        name: '2',
-                        value: '2'
-                    }, {
-                        name: '3',
-                        value: '3'
-                    }, {
-                        name: '4',
-                        value: '4'
-                    }, {
-                        name: '6',
-                        value: '6'
-                    }]
-                })
+                labelWidth: 35,
+                margin: '0 60 0 0'
+            }, {
+                xtype: 'combobox',
+                fieldLabel: 'Host',
+                emptyText: 'Todos os Hosts',
+                store: 'Log.store.combobox.ComboFromHosts',
+                queryMode: 'local',
+                id: 'fromhostcombo',
+                displayField: 'FromHost',
+                valueField: 'FromHost',
+                editable: false,
+                labelWidth: 35,
+                margin: '0 60 0 0'
             }, {
                 xtype: 'textfield',
-                fieldLabel: 'Host',
-                name: 'host',
-                labelWidth: 35,
-                margin: '0 0 0 60',
+                name: 'Evento',
+                fieldLabel: 'Evento',
+                labelWidth: 40
+
             }]
-        }, {
-            xtype: 'textfield',
-            flex: 1,
-            name: 'Evento',
-            fieldLabel: 'Evento',
-            allowBlank: false
         }]
     }],
 

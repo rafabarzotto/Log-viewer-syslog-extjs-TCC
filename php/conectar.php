@@ -10,7 +10,7 @@ $userBanco = "root";
 $senhaBanco = "qwe123";
  
 //nome da base de dados
-$db = "Syslog";
+$db = "Log";
  
 //executa a conexão com o banco, caso contrário mostra o erro ocorrido
 $conexao = mysql_connect($servidor,$userBanco,$senhaBanco) or die (mysql_error());

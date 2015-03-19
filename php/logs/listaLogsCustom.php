@@ -6,34 +6,47 @@
 	$limit = $_REQUEST['limit'];
 
 	$tag = "SysLogTag";
-	$prioriedade = "Priority";
 	$host = "FromHost";
 	$evento = "Message";
+	$inicio = " undefined";
+	$fim = " undefined";
 
-
-		if(($_REQUEST['tag']) != ""){
+		if(!empty($_REQUEST['tag'])){
 			$tag = "'".$_REQUEST['tag']."'";
 		}
 
-		if(($_REQUEST['prioriedade']) != ""){
-			$prioriedade = $_REQUEST['prioriedade'];
-		}
-
-		if(($_REQUEST['host']) != ""){
+		if(!empty($_REQUEST['host'])){
 			$host = "'".$_REQUEST['host']."'";
 		}			
 
-		if(($_REQUEST['evento']) != ""){
+		if(!empty($_REQUEST['evento'])){
 			$evento = "'".$_REQUEST['evento']."'";
 		}
 
+		if(($_REQUEST['inicio']) != " undefined"){
+			$inicio = "'".$_REQUEST['inicio']."'";
+			$fim = "'".$_REQUEST['fim']."'";
+
+			$queryString = "SELECT ID, DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') AS DeviceReportedTime, 
+			SysLogTag, Facility, Priority, FromHost, Message 
+			FROM SystemEvents 
+			WHERE DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') >= $inicio AND
+			DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') <= $fim AND SysLogTag = $tag AND
+			FromHost = $host AND 
+			Message = $evento order by ID LIMIT $start,  $limit";
+		} else 
 
 		$queryString = "SELECT ID, DeviceReportedTime, SysLogTag, Facility, Priority, FromHost, Message 
 			FROM SystemEvents 
-			WHERE SysLogTag = $tag AND 
-				Priority = $prioriedade AND 
+			WHERE SysLogTag = $tag AND
 				FromHost = $host AND 
 				Message = $evento order by ID desc LIMIT $start,  $limit";
+
+		/*$queryString = "SELECT ID, DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') AS DeviceReportedTime, 
+		SysLogTag, Facility, Priority, FromHost, Message 
+		FROM SystemEvents 
+		WHERE DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') >= '2015-03-03 11:33' AND
+		DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') <= '2015-03-18 21:00';"; */
 
 
 	//consulta sql
@@ -49,8 +62,7 @@
 
 	//consulta total de linhas na tabela
 	$queryTotal = mysql_query("SELECT count(*) as num FROM SystemEvents 
-			WHERE SysLogTag = $tag AND 
-				Priority = $prioriedade AND 
+			WHERE SysLogTag = $tag AND
 				FromHost = $host AND 
 				Message = $evento") or die(mysql_error());
 	$row = mysql_fetch_assoc($queryTotal);
@@ -62,4 +74,5 @@
 		"total" => $total,
 		"logs" => $logs
 	));
+
 ?>

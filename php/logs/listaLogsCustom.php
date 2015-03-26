@@ -34,7 +34,14 @@
 			DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') <= $fim AND SysLogTag = $tag AND
 			FromHost = $host AND 
 			Message = $evento order by ID LIMIT $start,  $limit";
-		} else 
+
+			$queryTotal = mysql_query("SELECT count(*) as num FROM SystemEvents 
+			WHERE DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') >= $inicio AND
+			DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') <= $fim AND SysLogTag = $tag AND
+			FromHost = $host AND 
+			Message = $evento") or die(mysql_error());
+
+		} else {
 
 		$queryString = "SELECT ID, DeviceReportedTime, SysLogTag, Facility, Priority, FromHost, Message 
 			FROM SystemEvents 
@@ -42,12 +49,12 @@
 				FromHost = $host AND 
 				Message = $evento order by ID desc LIMIT $start,  $limit";
 
-		/*$queryString = "SELECT ID, DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') AS DeviceReportedTime, 
-		SysLogTag, Facility, Priority, FromHost, Message 
-		FROM SystemEvents 
-		WHERE DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') >= '2015-03-03 11:33' AND
-		DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') <= '2015-03-18 21:00';"; */
-
+		//consulta total de linhas na tabela
+		$queryTotal = mysql_query("SELECT count(*) as num FROM SystemEvents 
+			WHERE SysLogTag = $tag AND
+				FromHost = $host AND 
+				Message = $evento") or die(mysql_error());
+	}
 
 	//consulta sql
 	$query = mysql_query($queryString) or die(mysql_error());
@@ -60,11 +67,6 @@
 
 	//echo $logs;
 
-	//consulta total de linhas na tabela
-	$queryTotal = mysql_query("SELECT count(*) as num FROM SystemEvents 
-			WHERE SysLogTag = $tag AND
-				FromHost = $host AND 
-				Message = $evento") or die(mysql_error());
 	$row = mysql_fetch_assoc($queryTotal);
 	$total = $row['num'];
 

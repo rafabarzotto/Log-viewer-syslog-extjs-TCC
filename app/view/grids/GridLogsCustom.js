@@ -2,7 +2,7 @@ Ext.define('Log.view.grids.GridLogsCustom', {
     extend: 'Log.ux.grid.LiveSearchGridPanel',
     alias: 'widget.gridlogscustom',
 
-    requires: ['Ext.form.field.Date', 'Ext.toolbar.Spacer'],
+    requires: ['Ext.form.field.Date', 'Ext.toolbar.Spacer', 'Log.ux.basePagingTbar'],
 
     store: 'Log.store.logs.LogsCustom',
 
@@ -44,7 +44,7 @@ Ext.define('Log.view.grids.GridLogsCustom', {
 
         {
             text: 'SysLogTag',
-            width: 125,
+            width: 90,
             dataIndex: 'SysLogTag',
             items: {
                 xtype: 'textfield',
@@ -88,7 +88,7 @@ Ext.define('Log.view.grids.GridLogsCustom', {
 
         {
             text: 'Host',
-            width: 100,
+            width: 140,
             dataIndex: 'FromHost',
             items: {
                 xtype: 'textfield',
@@ -151,10 +151,20 @@ Ext.define('Log.view.grids.GridLogsCustom', {
     maximized: true,
     renderTo: Ext.getBody(),
 
-    dockedItems: [{
+    dockedItems: [/*{
         xtype: 'pagingtoolbar',
         store: 'Log.store.logs.LogsCustom', // same store GridPanel is using --- EXEMPLO da documentação
         dock: 'bottom',
+        displayInfo: true
+    },*/ {
+        xtype: 'basePagingTbar',
+        dock: 'bottom',
+        store: 'Log.store.logs.LogsCustom',
+        hideRefresh: true,
+        saveParamsOnLoad: true,
+        alternateHandlers: {
+
+        },
         displayInfo: true
     }]
 

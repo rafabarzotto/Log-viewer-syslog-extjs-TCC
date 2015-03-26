@@ -44,7 +44,7 @@ Ext.define('Log.view.grids.GridLogs', {
 
         {
             text: 'SysLogTag',
-            width: 125,
+            width: 90,
             dataIndex: 'SysLogTag',
             items: {
                 xtype: 'textfield',
@@ -88,7 +88,7 @@ Ext.define('Log.view.grids.GridLogs', {
 
         {
             text: 'Host',
-            width: 100,
+            width: 140,
             dataIndex: 'FromHost',
             items: {
                 xtype: 'textfield',

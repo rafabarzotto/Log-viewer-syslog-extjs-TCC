@@ -25,13 +25,16 @@ Ext.define('Log.controller.Relatorios', {
 
 	onloadGrid: function(button, e, options) {
 		var form = button.up('form'),
-			 values = form.getValues(),
-			 grid = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers gridlogscustom')[0],
-			 store = grid.getStore(),
-			 comboFromHost = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers combobox#fromhostcombo')[0],
-			 comboFromHostValue = comboFromHost.getValue(),
-			 comboTag = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers combobox#tagcombo')[0],
-			 comboTagValue = comboTag.getValue();
+			values = form.getValues(),
+			grid = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers gridlogscustom')[0],
+			store = grid.getStore(),
+			comboFromHost = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers combobox#fromhostcombo')[0],
+			comboFromHostValue = comboFromHost.getValue(),
+			comboTag = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers combobox#tagcombo')[0],
+			comboTagValue = comboTag.getValue();
+
+		store.removeAll();
+		store.loadPage(1);
 
 		store.load({
 			params: {
@@ -46,7 +49,18 @@ Ext.define('Log.controller.Relatorios', {
 
 	onClearForm: function(button, e, options) {
 		button.up('form').getForm().reset();
-	},
+		var grid = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers gridlogscustom')[0],
+			store = grid.getStore();
+		store.removeAll();
+
+		var pg = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers gridlogscustom basePagingTbar')[0],
+			storePh = pg.getStore();
+		storePh.removeAll();
+		console.log(storePh);
+		storePh.loadPage(1);
+
+
+	}
 
 
 

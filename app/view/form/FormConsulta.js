@@ -102,7 +102,7 @@ Ext.define('Log.view.form.FormConsulta', {
 
     buttons: [{
         text: 'Buscar',
-        itemId: 'buscar',
+        itemId: 'buscar'
     }, {
         text: 'Limpar',
         itemId: 'limpar',

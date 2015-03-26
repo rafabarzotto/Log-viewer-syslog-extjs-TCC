@@ -20,7 +20,7 @@
 		}			
 
 		if(!empty($_REQUEST['evento'])){
-			$evento = "'".$_REQUEST['evento']."'";
+			$evento = "'%".$_REQUEST['evento']."%'";
 		}
 
 		if(($_REQUEST['inicio']) != " undefined"){
@@ -33,13 +33,13 @@
 			WHERE DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') >= $inicio AND
 			DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') <= $fim AND SysLogTag = $tag AND
 			FromHost = $host AND 
-			Message = $evento order by ID LIMIT $start,  $limit";
+			Message LIKE $evento order by ID LIMIT $start,  $limit";
 
 			$queryTotal = mysql_query("SELECT count(*) as num FROM SystemEvents 
 			WHERE DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') >= $inicio AND
 			DATE_FORMAT(DeviceReportedTime,'%Y-%m-%d %H:%i') <= $fim AND SysLogTag = $tag AND
 			FromHost = $host AND 
-			Message = $evento") or die(mysql_error());
+			Message LIKE $evento") or die(mysql_error());
 
 		} else {
 
@@ -47,13 +47,13 @@
 			FROM SystemEvents 
 			WHERE SysLogTag = $tag AND
 				FromHost = $host AND 
-				Message = $evento order by ID desc LIMIT $start,  $limit";
+				Message LIKE $evento order by ID desc LIMIT $start,  $limit";
 
 		//consulta total de linhas na tabela
 		$queryTotal = mysql_query("SELECT count(*) as num FROM SystemEvents 
 			WHERE SysLogTag = $tag AND
 				FromHost = $host AND 
-				Message = $evento") or die(mysql_error());
+				Message LIKE $evento") or die(mysql_error());
 	}
 
 	//consulta sql

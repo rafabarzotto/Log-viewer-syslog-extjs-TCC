@@ -33,18 +33,30 @@ Ext.define('Log.controller.Relatorios', {
 			comboTag = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers combobox#tagcombo')[0],
 			comboTagValue = comboTag.getValue();
 
-		store.removeAll();
-		store.loadPage(1);
 
-		store.load({
-			params: {
-				tag: comboTagValue,
-				host: comboFromHostValue,
-				evento: values.evento,
-				inicio: values.startDate + " " + values.startTime,
-				fim: values.endDate + " " + values.endTime
-			}
-		});
+		if (values.startDate != "" && values.startTime == undefined) {
+			Ext.Msg.alert('Aviso!', 'É necessario preencher todos os campos de data e hora!!');
+		} else if (values.endDate != "" && values.endTime == undefined) {
+			Ext.Msg.alert('Aviso!', 'É necessario preencher todos os campos de data e hora!!');
+		} else if (values.startDate != "" && values.endDate == "") {
+			Ext.Msg.alert('Aviso!', 'É necessario preencher todos os campos de data e hora!!');
+		} else if (values.startTime == undefined && values.endTime != undefined) {
+			Ext.Msg.alert('Aviso!', 'É necessario preencher todos os campos de data e hora!!');
+		} else {
+			store.loadPage(1);
+			store.removeAll();
+
+			store.load({
+				params: {
+					tag: comboTagValue,
+					host: comboFromHostValue,
+					evento: values.evento,
+					inicio: values.startDate + " " + values.startTime,
+					fim: values.endDate + " " + values.endTime
+				}
+			});
+
+		}
 	},
 
 	onClearForm: function(button, e, options) {
@@ -55,10 +67,8 @@ Ext.define('Log.controller.Relatorios', {
 
 		var pg = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers gridlogscustom basePagingTbar')[0],
 			storePh = pg.getStore();
-		storePh.removeAll();
-		console.log(storePh);
 		storePh.loadPage(1);
-
+		storePh.removeAll();
 
 	}
 

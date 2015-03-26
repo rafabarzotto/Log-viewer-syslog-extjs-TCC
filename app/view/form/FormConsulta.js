@@ -92,9 +92,9 @@ Ext.define('Log.view.form.FormConsulta', {
                 margin: '0 60 0 0'
             }, {
                 xtype: 'textfield',
-                name: 'Evento',
+                name: 'evento',
                 fieldLabel: 'Evento',
-                labelWidth: 40
+                labelWidth: 40,
 
             }]
         }]

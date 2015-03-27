@@ -3,8 +3,8 @@ Ext.define('Log.view.tabs.TabLogs', {
 
     alias: 'widget.tablogs',
 
-    requires: ['Log.view.grids.GridLogs',
-        'Log.view.tabs.logs.Consulta'
+    requires: ['Log.view.tabs.logs.Consulta',
+        'Log.view.tabs.logs.ConsultaP'
     ],
 
    // height: '100%', //720
@@ -17,7 +17,7 @@ Ext.define('Log.view.tabs.TabLogs', {
     items: [{
         title: 'Todos os Eventos',
         items: [{
-            xtype: 'gridlogs'
+            xtype: 'consulta'
         }]
     }, {
         title: 'Relatório Personalizado',

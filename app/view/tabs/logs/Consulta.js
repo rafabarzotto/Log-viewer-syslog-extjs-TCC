@@ -1,13 +1,12 @@
 Ext.define('Log.view.tabs.logs.Consulta', {
     extend: 'Ext.panel.Panel',
-    alias: 'widget.consultapers',
+    alias: 'widget.consulta',
 
 
-    requires: ['Log.view.form.FormConsulta',
-    'Log.view.grids.GridLogsCustom'],
+    requires: ['Log.view.grids.GridLogs'],
 
     autoShow: true,
-    width: '100%',
+    width: 1250,
     height: '100%',
     maximized: true,
 
@@ -19,9 +18,7 @@ Ext.define('Log.view.tabs.logs.Consulta', {
 
     items: [{
         //html: 'ajsdfiuajiosdfjioasdjfio'
-        xtype: 'formconsulta'
-    }, {
-        xtype: 'gridlogscustom'
+        xtype: 'gridlogs'
     }]
 
 });

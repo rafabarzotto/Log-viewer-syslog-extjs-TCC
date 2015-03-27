@@ -2,7 +2,7 @@ Ext.define('Log.view.form.FormConsulta', {
     extend: 'Ext.form.Panel',
     alias: 'widget.formconsulta',
 
-    requires: ['Log.ux.notification.Notification'],
+    requires: ['Ext.form.field.Time', 'Ext.form.FieldSet', 'Ext.form.FieldContainer'],
 
     autoHeight: true,
     width: '99%', //600
@@ -105,22 +105,7 @@ Ext.define('Log.view.form.FormConsulta', {
         itemId: 'buscar'
     }, {
         text: 'Limpar',
-        itemId: 'limpar',
-        handler: function(btn) {
-            Ext.create('widget.uxNotification', {
-                corner: 'tc',
-                manager: 'instructions',
-                //iconCls: 'notification-icon-information',
-                title: 'Test',
-                html: 'HAHAHHAHAHAHAHA DEU CERTO',
-                autoDestroyDelay: 4000,
-                slideInDelay: 500,
-                slideDownDelay: 500,
-                slideInAnimation: 'bounceOut',
-                slideDownAnimation: 'easeIn'
-            }).show();
-            this.up('form').getForm().reset();
-        }
+        itemId: 'limpar'
 
     }]
 

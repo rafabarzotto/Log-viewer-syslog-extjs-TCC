@@ -13,6 +13,8 @@
 	//consulta sql
 	$query = mysql_query($queryString) or die(mysql_error());
 
+	//echo $query;
+
 	//faz um looping e cria um array com os campos da consulta
 	$logs = array();
 	while($log = mysql_fetch_assoc($query)) {

@@ -65,11 +65,6 @@ Ext.define('Log.controller.Relatorios', {
 			store = grid.getStore();
 		store.removeAll();
 
-		var pg = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers gridlogscustom basePagingTbar')[0],
-			storePh = pg.getStore();
-		storePh.loadPage(1);
-		storePh.removeAll();
-
 	}
 
 

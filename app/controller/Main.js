@@ -22,7 +22,7 @@ Ext.define('Log.controller.Main', {
 			},
 
 			"barra button#opcoes > menu > menuitem#opB": {
-				//click: this.openCancelarOrdem
+				click: this.openHostsGrid
 			},
 
 			"barra button#relatorios > menu > menuitem#relA": {
@@ -57,7 +57,12 @@ Ext.define('Log.controller.Main', {
 	//Opcoes
 	openUsersGrid: function(btn, eOpts) {
 		Ext.create('Log.view.usuarios.UsersGrid');
+	},
+
+	openHostsGrid: function(btn, eOpts) {
+		Ext.create('Log.view.ping.HostsGrid');
 	}
+
 
 
 });

@@ -9,7 +9,6 @@ Ext.define('Log.view.portlet.GridPortlet', {
     store: 'Log.store.logs.LogsPortlet',
 
     columns: [{
-        id: 'data',
         text: 'Horario do Evento',
         flex: 1, //usa a sobra
         width: 130,

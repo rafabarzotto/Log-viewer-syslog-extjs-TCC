@@ -49,8 +49,8 @@ Ext.define('Log.view.portal.PortletPanel', {
                 items: [{
                     id: 'portlet-3',
                     height: 300,
-                    title: 'Portlet 3',
-                    html: "Teste ejaiuehuae"
+                    title: 'Monitor de Hosts',
+                    items: Ext.create('Log.view.portlet.GridPortletPing')
                 }]
             }, {
                 id: 'col-3',

@@ -117,7 +117,7 @@ Ext.define('Log.view.grids.GridLogsCustom', {
 
         {
             text: 'Evento',
-            width: 880,
+            width: 700,
             dataIndex: 'Message',
             items: {
                 xtype: 'textfield',

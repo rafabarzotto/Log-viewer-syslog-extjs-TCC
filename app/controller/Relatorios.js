@@ -21,8 +21,11 @@ Ext.define('Log.controller.Relatorios', {
 
 			"janelarelatorios tablogs consultapers formconsulta button#limpar": {
 				click: this.onClearForm
-			}
+			},
 
+			"janelarelatorios tablogs grid": {
+				celldblclick: this.onClickRow
+			}
 
 		})
 	},
@@ -75,6 +78,13 @@ Ext.define('Log.controller.Relatorios', {
 		var grid = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers gridlogscustom')[0],
 			store = grid.getStore();
 		store.removeAll();
+
+	},
+
+	onClickRow: function(grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+		console.log('Clicou');
+		var rec = grid.getStore().getAt(rowIndex);
+		window.open('http://www.google.com.br/search?q='+rec.data.Message,'_blank');
 
 	}
 

@@ -106,7 +106,9 @@ Ext.define('Log.view.form.FormConsulta', {
     }, {
         text: 'Limpar',
         itemId: 'limpar'
-
+    }, {
+        text: 'Gerar PDF',
+        itemId: 'pdf'
     }]
 
 });

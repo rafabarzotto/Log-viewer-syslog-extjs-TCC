@@ -42,9 +42,14 @@ Ext.define('Log.controller.Main', {
 
 	onGridRender: function(gridportlet, eOpts) {
 		gridportlet = Ext.ComponentQuery.query('portletpanel gridportlet')[0];
-		gridportlet.getStore().load();
 		gridportletping = Ext.ComponentQuery.query('portletpanel gridportletping')[0];
+		gridportlet.getStore().load();
 		gridportletping.getStore().load();
+
+		var interval = setInterval(function() {
+			//gridportlet.getStore().load();
+			//gridportletping.getStore().load();
+		}, 50000);
 	},
 
 	//Arquivo

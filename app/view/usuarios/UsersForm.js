@@ -59,7 +59,7 @@ Ext.define('Log.view.usuarios.UsersForm', {
 				xtype: 'button',
 				text: 'Cancelar',
 				itemId: 'cancel',
-				iconCls: 'icon-reset'
+				iconCls: 'icon-cancel'
 			},
 
 			{

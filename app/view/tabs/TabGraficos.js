@@ -11,7 +11,7 @@ Ext.define('Log.view.tabs.TabGraficos', {
 
     maximized: true,
     height: 720, //720
-    width: 1260, //1260
+    width: 1000, //1260
     defaults: {
         bodyPadding: 5,
         autoScroll: true

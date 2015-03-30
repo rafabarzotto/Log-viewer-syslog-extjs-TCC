@@ -15,11 +15,11 @@ Ext.define('Log.view.toolbar.Barra', {
             iconCls: 'icon-folder',
             itemId: 'arquivo',
             menu: [{
-                text: 'Gerar Ordem de Compra',
+                text: 'Item 1',
                 id: 'arqA',
                 iconCls: 'icon-date'
             }, {
-                text: 'Ordens Emitidas',
+                text: 'Item 2',
                 id: 'arqB',
                 iconCls: 'icon-folder'
             }, {
@@ -45,10 +45,10 @@ Ext.define('Log.view.toolbar.Barra', {
                 text: 'Relatórios Completos',
                 id: 'relA',
                 iconCls: 'icon-date'
-            }, '-', {
+            }, {
                 text: 'Graficos',
                 id: 'relB',
-                iconCls: 'icon-chart'
+                iconCls: 'icon-chart-bar'
             }, {
                 text: 'Item 4'
             }]
@@ -65,13 +65,13 @@ Ext.define('Log.view.toolbar.Barra', {
             iconCls: 'icon-wrench',
             itemId: 'opcoes',
             menu: [{
-                text: 'Abrir Cadastro de User',
+                text: 'Cadastro de User',
                 id: 'opA',
                 iconCls: 'icon-user-add'
             }, {
-                text: 'Cancelar Ordem',
+                text: 'Cadastro de Hosts',
                 id: 'opB',
-                iconCls: 'icon-cancel'
+                iconCls: 'icon-computer-add'
             }, {
                 text: 'Item 3'
             }, {

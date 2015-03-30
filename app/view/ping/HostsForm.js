@@ -2,7 +2,7 @@ Ext.define('Log.view.ping.HostsForm', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.hostsform',
 
-	height: 200,
+	height: 140,
 	width: 350,
 	modal: true,
 	//bodyPadding: 10,
@@ -53,7 +53,7 @@ Ext.define('Log.view.ping.HostsForm', {
 				xtype: 'button',
 				text: 'Cancelar',
 				itemId: 'cancel',
-				iconCls: 'icon-reset'
+				iconCls: 'icon-cancel'
 			},
 
 			{

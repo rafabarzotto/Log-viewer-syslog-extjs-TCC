@@ -14,17 +14,17 @@ Ext.define('Log.view.tabs.graficos.GraficoHost', {
     height: 600,
     maximized: true,
 
-        items: [{
-            xtype: 'hostspie'
-        }, {
-            xtype: 'hostsbar'
-        }, {
-            //  xtype: 'qtdhostsbar'
-        }],
+    items: [{
+        xtype: 'hostspie'
+    }, {
+        xtype: 'hostsbar'
+    }, {
+        //  xtype: 'qtdhostsbar'
+    }],
 
-        dockedItems: [{
-            xtype: 'barragraficos'
-        }]
+    dockedItems: [{
+        xtype: 'barragraficos'
+    }]
 
 
 });

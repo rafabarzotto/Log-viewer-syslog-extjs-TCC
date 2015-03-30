@@ -16,7 +16,7 @@ Ext.define('Log.view.janelas.Relatorios', {
 	autoShow: true,
 	modal: true,
 	maximized: true,
-	autoScroll: false,
+	autoScroll: true,
 
 	closeAction: 'destroy',
 

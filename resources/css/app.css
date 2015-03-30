@@ -78,6 +78,14 @@
     background-image: url(../images/accept.png) !important;
 }
 
+.icon-computer-add {
+    background-image: url(../images/computer_add.png) !important;
+}
+
+.icon-chart-bar {
+    background-image: url(../images/chart_bar.png) !important;
+}
+
 
 /* CSS LiveSearchGridPanel */
 .x-livesearch-match {

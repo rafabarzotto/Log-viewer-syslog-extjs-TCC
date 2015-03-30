@@ -1,6 +1,9 @@
 Ext.define('Log.controller.Main', {
 	extend: 'Ext.app.Controller',
 
+	stores: ['Log.store.Ping',
+		'Log.store.logs.LogsPortlet'
+	],
 
 	// Funcao Renderizar GRID
 	init: function(application) {
@@ -40,6 +43,8 @@ Ext.define('Log.controller.Main', {
 	onGridRender: function(gridportlet, eOpts) {
 		gridportlet = Ext.ComponentQuery.query('portletpanel gridportlet')[0];
 		gridportlet.getStore().load();
+		gridportletping = Ext.ComponentQuery.query('portletpanel gridportletping')[0];
+		gridportletping.getStore().load();
 	},
 
 	//Arquivo

@@ -15,6 +15,6 @@ Ext.define('Log.store.combobox.ComboTag', {
 		}
 	},
 
-	autoLoad: true
+	autoLoad: false
 
 });

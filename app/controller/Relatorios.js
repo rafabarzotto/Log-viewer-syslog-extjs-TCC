@@ -2,6 +2,12 @@ Ext.define('Log.controller.Relatorios', {
 	extend: 'Ext.app.Controller',
 
 
+	stores: ['Log.store.combobox.ComboFromHosts',
+		'Log.store.combobox.ComboTag',
+		'Log.store.logs.Logs',
+		'Log.store.logs.LogsCustom'
+	],
+
 	// Funcao Renderizar GRID
 	init: function(application) {
 		this.control({
@@ -21,7 +27,12 @@ Ext.define('Log.controller.Relatorios', {
 		})
 	},
 
-	onWindowRender: function(consultapers, eOpts) {},
+	onWindowRender: function(consultapers, eOpts) {
+		var comboTag = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers combobox#tagcombo')[0];
+		var comboHost = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers combobox#fromhostcombo')[0];
+		comboHost.getStore().load();
+		comboTag.getStore().load();
+	},
 
 	onloadGrid: function(button, e, options) {
 		var form = button.up('form'),

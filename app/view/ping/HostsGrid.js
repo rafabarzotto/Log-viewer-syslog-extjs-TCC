@@ -20,6 +20,10 @@ Ext.define('Log.view.ping.HostsGrid', {
 
         columns: [
             {
+                text: 'ID',
+                width: 35,
+                dataIndex: 'id'
+            }, {
                 text: 'Nome',
                 flex: 1,
                 width: 192,
@@ -65,7 +69,7 @@ Ext.define('Log.view.ping.HostsGrid', {
 
         {
             xtype: 'pagingtoolbar',
-            //store: 'Log.store.Ping', // same store GridPanel is using --- EXEMPLO da documentação
+            store: 'Log.store.Ping', // same store GridPanel is using --- EXEMPLO da documentação
             dock: 'bottom',
             displayInfo: true
         }

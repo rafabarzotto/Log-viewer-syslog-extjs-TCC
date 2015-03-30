@@ -10,7 +10,6 @@ Ext.define('Log.view.portlet.GridPortlet', {
 
     columns: [{
         text: 'Horario do Evento',
-        flex: 1, //usa a sobra
         width: 130,
         dataIndex: 'DeviceReportedTime'
     }, {
@@ -19,6 +18,7 @@ Ext.define('Log.view.portlet.GridPortlet', {
         dataIndex: 'SysLogTag'
     }, {
         text: 'Host',
+        flex: 1, //usa a sobra
         width: 75,
         dataIndex: 'FromHost'
     }, {

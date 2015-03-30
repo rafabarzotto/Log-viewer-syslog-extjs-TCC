@@ -15,6 +15,6 @@ Ext.define('Log.store.combobox.ComboFromHosts', {
 		}
 	},
 
-	autoLoad: true
+	autoLoad: false
 
 });

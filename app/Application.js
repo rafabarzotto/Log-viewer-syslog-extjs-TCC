@@ -21,21 +21,16 @@ Ext.define('Log.Application', {
         'Log.controller.usuarios.Users',
         'Log.controller.graficos.GraficoHost',
         'Log.controller.graficos.GraficoPeriodo',
-        'Log.controller.Relatorios'
+        'Log.controller.Relatorios',
+        'Log.controller.ping.Ping'
     ],
 
-    stores: ['Log.store.Usuarios',
-        'Log.store.logs.Logs',
-        'Log.store.logs.LogsCustom',
+    stores: [
         'Log.store.graficos.FromHosts',
         'Log.store.graficos.Hora',
         'Log.store.graficos.Dia',
         'Log.store.graficos.Mes',
-        'Log.store.graficos.Ano',
-        'Log.store.logs.LogsPortlet',
-        'Log.store.combobox.ComboFromHosts',
-        'Log.store.combobox.ComboTag',
-        'Log.store.Ping'
+        'Log.store.graficos.Ano'
     ],
 
 

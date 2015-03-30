@@ -1,20 +1,33 @@
 Ext.define('Log.store.Ping', {
-	extend: 'Ext.data.Store',
+    extend: 'Ext.data.Store',
 
-	fields: ['nome', 'ip', 'result'],
+    model: 'Log.model.Ping',
 
-   //pageSize: 10, // PAGINAGINA MAXIMA
-	
-	proxy: {
-		type: 'ajax',
-		url: 'php/util/ping.php',
+    pageSize: 20, // PAGINAGINA MAXIMA
 
-		reader: {
-			type: 'json',
-			root: 'ping'
-		}
-	},
+    proxy: {
+        type: 'ajax',
 
-	autoLoad: true
+        api: {
+            create: 'php/ping/criaHost.php',
+            read: 'php/ping/listaHost.php',
+            update: 'php/ping/atualizaHost.php',
+            destroy: 'php/ping/deletaHost.php',
+        },
+
+        reader: {
+            type: 'json',
+            root: 'ping'
+        },
+
+        writer: {
+            type: 'json',
+            root: 'ping',
+            encode: 'json'
+        }
+
+    },
+
+    autoLoad: false
 
 });

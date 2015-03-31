@@ -4,6 +4,8 @@ require_once('../tcpdf/config/lang/eng.php');
 require_once('../tcpdf/tcpdf.php');
 require_once("../conectar.php");
 
+	session_start();
+
 	$start = $_REQUEST['start'];
 	$limit = $_REQUEST['limit'];
 
@@ -12,6 +14,8 @@ require_once("../conectar.php");
 	$evento = "Message";
 	$inicio = " undefined";
 	$fim = " undefined";
+
+	$date = date('Y-m-d H:i');
 
 // extend TCPF with custom functions
 class MYPDF extends TCPDF {
@@ -36,7 +40,7 @@ class MYPDF extends TCPDF {
 		$this->SetLineWidth(0.3);
 		$this->SetFont('', 'B');
 		// Header
-		$w = array(15, 40, 35, 15, 35, 127);
+		$w = array(19, 40, 25, 15, 35, 133);
 		$num_headers = count($header);
 		for($i = 0; $i < $num_headers; ++$i) {
 			$this->Cell($w[$i], 7, $header[$i], 1, 0, 'C', 1);
@@ -50,11 +54,11 @@ class MYPDF extends TCPDF {
 		$fill = 0;
 		foreach($data as $row) {
 			$this->Cell($w[0], 6, $row['ID'], 'LR', 0, 'C', $fill);
-			$this->Cell($w[1], 6, $row['DeviceReportedTime'], 'LR', 0, 'L', $fill);
+			$this->Cell($w[1], 6, $row['DeviceReportedTime'], 'LR', 0, 'C', $fill);
 			$this->Cell($w[2], 6, $row['SysLogTag'], 'LR', 0, 'C', $fill);
 			$this->Cell($w[3], 6, $row['Priority'], 'LR', 0, 'C', $fill);
 			$this->Cell($w[4], 6, $row['FromHost'], 'LR', 0, 'C', $fill);
-			$this->Cell($w[5], 6, $row['Message'], 'LR', 0, 'C', $fill);
+			$this->Cell($w[5], 6, $row['Message'], 'LR', 0, 'LR', $fill);
 			//$this->Cell($w[6], 6, $row[''] . ' LR', 'LR', 0, 'C', $fill);
 			//$this->Cell($w[7], 6, $row['rental_rate'], 'LR', 0, 'C', $fill);
 			//$this->Cell($w[8], 6, $row['last_update'], 'LR', 0, 'C', $fill);
@@ -135,7 +139,7 @@ $pdf->SetAuthor('Rafael Barzotto');
 $pdf->SetTitle('Export Chart');
 $pdf->SetSubject('Mastering Ext JS Book');
 
-$pdf->SetHeaderData(PDF_HEADER_LOGO, 40, 'SYSLOG ANALYSER', 'by Rafael Barzotto', array(0,64,255), array(0,64,128));
+$pdf->SetHeaderData(PDF_HEADER_LOGO, 80, 'SYSLOG VIEWER', 'Relatório Gerado: '.$date.' usuário: '.$_SESSION['username'], array(0,64,255), array(0,64,128));
 $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 
 // set default monospaced font

@@ -23,6 +23,10 @@ Ext.define('Log.controller.Relatorios', {
 				click: this.onClearForm
 			},
 
+			"janelarelatorios tablogs consultapers formconsulta button#pdf": {
+				click: this.onPdf
+			},
+
 			"janelarelatorios tablogs grid": {
 				celldblclick: this.onClickRow
 			}
@@ -84,9 +88,17 @@ Ext.define('Log.controller.Relatorios', {
 	onClickRow: function(grid, td, cellIndex, record, tr, rowIndex, e, eOpts) {
 		console.log('Clicou');
 		var rec = grid.getStore().getAt(rowIndex);
-		window.open('http://www.google.com.br/search?q='+rec.data.Message,'_blank');
+		window.open('http://www.google.com.br/search?q=' + rec.data.Message, '_blank');
 
-	}
+	},
+
+	onPdf: function(button, e, options) {
+		button.up('form').getForm().reset();
+		var grid = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers gridlogscustom')[0],
+			store = grid.getStore();
+		store.removeAll();
+
+	},
 
 
 

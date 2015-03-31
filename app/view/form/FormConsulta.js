@@ -109,6 +109,8 @@ Ext.define('Log.view.form.FormConsulta', {
     }, {
         text: 'Gerar PDF',
         itemId: 'pdf'
+    }, {
+        xtype: 'tbfill'
     }]
 
 });

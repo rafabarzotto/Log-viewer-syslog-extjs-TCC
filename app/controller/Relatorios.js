@@ -5,7 +5,8 @@ Ext.define('Log.controller.Relatorios', {
 	stores: ['Log.store.combobox.ComboFromHosts',
 		'Log.store.combobox.ComboTag',
 		'Log.store.logs.Logs',
-		'Log.store.logs.LogsCustom'
+		'Log.store.logs.LogsCustom',
+		'Log.store.LogPdf'
 	],
 
 	// Funcao Renderizar GRID
@@ -61,10 +62,8 @@ Ext.define('Log.controller.Relatorios', {
 		} else if (values.startTime == undefined && values.endTime != undefined) {
 			Ext.Msg.alert('Aviso!', 'É necessario preencher todos os campos de data e hora!!');
 		} else {
-			store.loadPage(1);
-			store.removeAll();
 
-			store.load({
+			store.loadPage(1, {
 				params: {
 					tag: comboTagValue,
 					host: comboFromHostValue,
@@ -73,7 +72,6 @@ Ext.define('Log.controller.Relatorios', {
 					fim: values.endDate + " " + values.endTime
 				}
 			});
-
 		}
 	},
 
@@ -93,10 +91,25 @@ Ext.define('Log.controller.Relatorios', {
 	},
 
 	onPdf: function(button, e, options) {
-		button.up('form').getForm().reset();
-		var grid = Ext.ComponentQuery.query('janelarelatorios tablogs consultapers gridlogscustom')[0],
-			store = grid.getStore();
-		store.removeAll();
+
+		var store = Ext.getStore('Log.store.logs.LogsCustom');
+		if (store.getTotalCount() > 0) {
+
+			var win = new Ext.Window({
+				title: 'Ordem de Compra',
+				iconCls: 'icon-grid',
+				modal: true,
+				autoShow: true,
+				items: [{
+					xtype: 'uxiframe',
+					width: 600,
+					height: 600,
+					src: 'php/pdf/geraRelatorio.php'
+				}]
+			});
+		} else {
+			Ext.Msg.alert('Aviso!', 'É necessario realizar uma consulta primeiro!');
+		}
 
 	},
 

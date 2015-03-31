@@ -2,6 +2,10 @@
 	//chama o arquivo de conexão com o bd
 	include("../conectar.php");
 
+	session_start();
+
+	$_SESSION['url'] = $_SERVER ['QUERY_STRING'];
+
 	$start = $_REQUEST['start'];
 	$limit = $_REQUEST['limit'];
 
@@ -76,5 +80,6 @@
 		"total" => $total,
 		"logs" => $logs
 	));
+
 
 ?>

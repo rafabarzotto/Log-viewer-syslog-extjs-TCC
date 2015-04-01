@@ -13,7 +13,7 @@ $pdf = new TCPDF('Landscape', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Loiane Groner');
+$pdf->SetAuthor('Rafael Barzotto');
 $pdf->SetTitle('Export Chart');
 $pdf->SetSubject('Mastering Ext JS Book');
 

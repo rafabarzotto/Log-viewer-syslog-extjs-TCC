@@ -1,9 +1,9 @@
-Ext.define('Log.view.tabs.graficos.GraficoHost', {
+Ext.define('Log.view.tabs.graficos.GraficoTag', {
     extend: 'Ext.tab.Panel',
-    alias: 'widget.graficohost',
+    alias: 'widget.graficotag',
 
-    views: ['Log.view.graficos.HostsPie',
-        'Log.view.graficos.HostsBar'
+    views: [//'Log.view.graficos.HostsPie',
+       // 'Log.view.graficos.HostsBar'
     ],
 
     requires: ['Log.view.toolbar.BarraGraficos'],
@@ -15,9 +15,9 @@ Ext.define('Log.view.tabs.graficos.GraficoHost', {
     maximized: true,
 
     items: [{
-        xtype: 'hostspie'
+       // xtype: 'hostspie'
     }, {
-        xtype: 'hostsbar'
+      //  xtype: 'hostsbar'
     }],
 
     dockedItems: [{

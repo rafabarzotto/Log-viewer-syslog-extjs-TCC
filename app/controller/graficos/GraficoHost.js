@@ -6,7 +6,6 @@ Ext.define('Log.controller.graficos.GraficoHost', {
         'tabs.graficos.GraficoHost',
         'graficos.HostsPie',
         'graficos.HostsBar'
-      //  'graficos.QtdHostsColumn',
     ],
 
     stores: [
@@ -18,9 +17,7 @@ Ext.define('Log.controller.graficos.GraficoHost', {
             "janelagraficos tabgraficos graficohost": { // Alias GRID!
                 render: this.onWindowRender
             },
-            "janelagraficos tabgraficos graficohost menu#changeType menuitem": {
-                click: this.onChangeChart
-            },
+
             "janelagraficos tabgraficos graficohost menu#download menuitem": {
                 click: this.onChartDownload
             }
@@ -32,19 +29,6 @@ Ext.define('Log.controller.graficos.GraficoHost', {
         panel.getStore().load();
     },
 
-    onChangeChart: function(item, e, options) {
-        //var panel = item.up('graficos');
-        var panel = Ext.ComponentQuery.query('janelagraficos tabgraficos graficohost')[0];
-
-        if (item.itemId == 'pie'){
-            panel.getLayout().setActiveItem(0);
-        } else if (item.itemId == 'column'){
-            console.log('deu coluna');
-            panel.getLayout().setActiveItem(1);
-        } else if (item.itemId == 'bar'){
-            panel.getLayout().setActiveItem(2);
-        }
-    },
 
     onChartDownload: function(item, e, options) {
         //var chart = item.up('graficos').getLayout().getActiveItem();
@@ -55,14 +39,6 @@ Ext.define('Log.controller.graficos.GraficoHost', {
                 if(choice == 'yes'){
                     chart.save({
                         type: 'image/png'
-                    });
-                }
-            });
-        } else if (item.itemId == 'svg'){
-            Ext.MessageBox.confirm('Confirmar Download', 'Gostaria de fazer o download do gráfico como SVG + XML?', function(choice){
-                if(choice == 'yes'){
-                    chart.save({
-                        type: 'image/svg+xml'
                     });
                 }
             });

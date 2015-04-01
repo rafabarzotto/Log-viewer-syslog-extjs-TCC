@@ -2,38 +2,32 @@ Ext.define('Log.view.graficos.LogsDiaBar', {
     extend: 'Ext.chart.Chart',
     alias: 'widget.logsdiabar',
 
-    requires: ['Ext.chart.series.Column', 'Ext.chart.axis.Category', 'Ext.chart.axis.Numeric'],
-
     title: 'Eventos por dia',
-    style: 'background:#fff',
     animate: true,
-    maximized: true,
-    insetPadding: 60,
-    shadow: true,
+    style: 'background:#fff',
+    shadow: false,
     store: 'Log.store.graficos.Dia',
     axes: [{
         type: 'Numeric',
-        position: 'left',
+        position: 'bottom',
         fields: ['Total'],
-        title: 'Eventos',
-        grid: true,
+        label: {
+            renderer: Ext.util.Format.numberRenderer('0,0')
+        },
+        title: 'Número de Eventos',
         minimum: 0
     }, {
         type: 'Category',
-        position: 'bottom',
+        position: 'left',
         fields: ['Dia'],
-        title: 'Dia',
-        label: {
-            font: '9px Arial'
-        }
+        title: 'Dia'
     }],
     series: [{
-        type: 'column',
-        axis: 'left',
-        highlight: true,
+        type: 'bar',
+        axis: 'bottom',
         tips: {
             trackMouse: true,
-            width: 100,
+            width: 200,
             height: 28,
             renderer: function(storeItem, item) {
                 this.setTitle(storeItem.get('Dia') + ': ' + storeItem.get('Total'));
@@ -41,13 +35,28 @@ Ext.define('Log.view.graficos.LogsDiaBar', {
         },
         label: {
             display: 'insideEnd',
-            'text-anchor': 'middle',
             field: 'Total',
-            orientation: 'vertical',
-            color: '#333'
+            renderer: Ext.util.Format.numberRenderer('0'),
+            orientation: 'horizontal',
+            color: '#333',
+            'text-anchor': 'middle',
+            contrast: true
         },
         xField: 'Dia',
-        yField: 'Total'
+        yField: ['Total'],
+        //color renderer
+        renderer: function(sprite, record, attr, index, store) {
+            var fieldValue = Math.random() * 20 + 10;
+            var value = (record.get('Total') >> 0) % 5;
+            var color = ['rgb(213, 70, 121)',
+                'rgb(44, 153, 201)',
+                'rgb(146, 6, 157)',
+                'rgb(49, 149, 0)',
+                'rgb(249, 153, 0)'
+            ][value];
+            return Ext.apply(attr, {
+                fill: color
+            });
+        }
     }]
-
 });

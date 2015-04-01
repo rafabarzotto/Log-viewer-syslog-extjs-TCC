@@ -6,6 +6,7 @@ Ext.define('Log.view.tabs.graficos.GraficoPeriodo', {
         'Log.view.graficos.LogsDiaBar',
         'Log.view.graficos.LogsMesBar',
         'Log.view.graficos.LogsAnoBar',
+        'Log.view.toolbar.BarraGraficos'
     ],
 
     layout: 'card',
@@ -20,6 +21,10 @@ Ext.define('Log.view.tabs.graficos.GraficoPeriodo', {
         xtype: 'logsmesbar'
     }, {
         xtype: 'logsanobar'
+    }],
+
+    dockedItems: [{
+        xtype: 'barragraficos'
     }]
 
 

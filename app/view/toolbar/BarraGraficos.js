@@ -14,47 +14,19 @@ Ext.define('Log.view.toolbar.BarraGraficos', {
 
 
     items: [{
-        text: 'Change Chart Type',
-        iconCls: 'menu_reports',
-        menu: {
-            xtype: 'menu',
-            itemId: 'changeType',
-            items: [{
-                xtype: 'menuitem',
-                text: 'Pie',
-                itemId: 'pie',
-                iconCls: 'chart_pie'
-            }, {
-                xtype: 'menuitem',
-                text: 'Column',
-                itemId: 'column',
-                iconCls: 'chart_bar'
-            }, {
-                xtype: 'menuitem',
-                text: 'Bar',
-                itemId: 'bar',
-                iconCls: 'chart_column'
-            }]
-        }
-    }, {
-        text: 'Download Chart',
+        text: 'Download',
         iconCls: 'download',
         menu: {
             xtype: 'menu',
             itemId: 'download',
             items: [{
                 xtype: 'menuitem',
-                text: 'Download as Image',
+                text: 'Download JPG',
                 itemId: 'png',
                 iconCls: 'image'
             }, {
                 xtype: 'menuitem',
-                text: 'Download as SVG',
-                itemId: 'svg',
-                iconCls: 'svg'
-            }, {
-                xtype: 'menuitem',
-                text: 'Download as PDF',
+                text: 'Download PDF',
                 itemId: 'pdf',
                 iconCls: 'pdf'
             }]

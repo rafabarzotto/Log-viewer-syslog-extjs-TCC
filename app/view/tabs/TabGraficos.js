@@ -4,14 +4,15 @@ Ext.define('Log.view.tabs.TabGraficos', {
     alias: 'widget.tabgraficos',
 
     views: ['Log.view.tabs.graficos.GraficoHost',
-    'Log.view.tabs.graficos.GraficoPeriodo',
+        'Log.view.tabs.graficos.GraficoPeriodo',
+        'Log.view.tabs.graficos.GraficoTag'
     ],
 
     xtype: 'basic-tabs',
 
     maximized: true,
     height: 720, //720
-    width: 1000, //1260
+    width: 1260, //1260
     defaults: {
         bodyPadding: 5,
         autoScroll: true
@@ -19,15 +20,18 @@ Ext.define('Log.view.tabs.TabGraficos', {
     items: [{
         title: 'Eventos por Host',
         items: [{
-                xtype: 'graficohost',
-            }]
-            //html: KitchenSink.DummyText.longText
+            xtype: 'graficohost',
+        }]
     }, {
-        title: 'Evento por período',
-                items: [{
-                xtype: 'graficoperiodo',
-            }]
-        // html: KitchenSink.DummyText.extraLongText
+        title: 'Eventos por período',
+        items: [{
+            xtype: 'graficoperiodo',
+        }]
+    }, {
+        title: 'Eventos por Tag',
+        items: [{
+          //  xtype: 'graficotag',
+        }]
     }, {
         title: 'Disabled Tab',
         disabled: true

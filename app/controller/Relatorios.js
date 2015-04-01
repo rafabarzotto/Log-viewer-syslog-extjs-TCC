@@ -1,12 +1,12 @@
 Ext.define('Log.controller.Relatorios', {
 	extend: 'Ext.app.Controller',
 
+	requires: ['Ext.ux.IFrame'],
 
 	stores: ['Log.store.combobox.ComboFromHosts',
 		'Log.store.combobox.ComboTag',
 		'Log.store.logs.Logs',
-		'Log.store.logs.LogsCustom',
-		'Log.store.LogPdf'
+		'Log.store.logs.LogsCustom'
 	],
 
 	// Funcao Renderizar GRID
@@ -96,7 +96,7 @@ Ext.define('Log.controller.Relatorios', {
 		if (store.getTotalCount() > 0) {
 
 			var win = new Ext.Window({
-				title: 'Ordem de Compra',
+				title: 'PDF',
 				iconCls: 'icon-grid',
 				modal: true,
 				autoShow: true,

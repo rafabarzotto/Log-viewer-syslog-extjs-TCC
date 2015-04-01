@@ -13,6 +13,7 @@ Ext.define('Log.view.Viewport', {
         'Log.view.app.PortalColumn',
         'Log.view.portal.PortletPanel',
         'Log.view.portlet.GridPortlet',
+        'Log.view.portlet.GridPortletPing',
         'Log.view.portlet.ChartPortlet',
         'Log.view.toolbar.Barra'
     ],

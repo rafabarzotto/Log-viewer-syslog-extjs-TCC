@@ -2,7 +2,8 @@ Ext.define('Log.controller.Main', {
 	extend: 'Ext.app.Controller',
 
 	stores: ['Log.store.Ping',
-		'Log.store.logs.LogsPortlet'
+		'Log.store.logs.LogsPortlet',
+		'Log.store.logs.LogsIDS'
 	],
 
 	// Funcao Renderizar GRID
@@ -42,8 +43,10 @@ Ext.define('Log.controller.Main', {
 
 	onGridRender: function(gridportlet, eOpts) {
 		gridportlet = Ext.ComponentQuery.query('portletpanel gridportlet')[0];
+		gridportletids = Ext.ComponentQuery.query('portletpanel gridportletids')[0];
 		gridportletping = Ext.ComponentQuery.query('portletpanel gridportletping')[0];
 		gridportlet.getStore().load();
+		gridportletids.getStore().load();
 		gridportletping.getStore().load();
 
 		var interval = setInterval(function() {

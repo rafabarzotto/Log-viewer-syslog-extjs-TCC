@@ -86,6 +86,10 @@
     background-image: url(../images/chart_bar.png) !important;
 }
 
+.icon-world {
+    background-image: url(../images/world.png) !important;
+}
+
 
 /* CSS LiveSearchGridPanel */
 .x-livesearch-match {

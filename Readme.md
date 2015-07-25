@@ -1,4 +1,4 @@
-Sistema Web desenvolvido em ExtJS+PHP para consulta e analise de logs do padrão SysLog.
+Sistema Web desenvolvido em ExtJS+PHP para consulta e análise de logs do padrão SysLog.
 
 
 

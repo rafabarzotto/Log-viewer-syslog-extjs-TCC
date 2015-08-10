@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 Sistema Web desenvolvido em ExtJS+PHP para consulta e análise de logs do padrão SysLog.
+=======
+Sistema Web desenvolvido em ExtJS+PHP para consulta e analise de logs do padrão SysLog.
+>>>>>>> Stashed changes
 
 
 
@@ -26,4 +30,8 @@ This folder contains the back-ends archives
 
 # ./sql
 
+<<<<<<< Updated upstream
 This folder contains the sql scripts
+=======
+This folder contains the sql scripts
+>>>>>>> Stashed changes
